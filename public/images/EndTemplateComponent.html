@@ -1,0 +1,15 @@
+<ng-template pTemplate="end">
+  <p-avatar shape="circle" [image]="userPhoto" />
+  <span
+    (click)="menu.toggle($event)"
+    class="font-bold text-gray-400 mr-2 cursor-pointer sarabun -mt-1"
+  >
+    {{ 
+      currentUser?.displayName 
+        ? currentUser.displayName 
+        : currentUser?.email 
+    }}
+    <i class="pi pi-angle-down"></i>
+  </span>
+  <p-tieredMenu #menu [model]="subitems" [popup]="true"></p-tieredMenu>
+</ng-template>
